@@ -9,13 +9,13 @@ interface AffairPropsType {
 const Affair: FC<AffairPropsType> = ({ affair, deleteAffairCallback }) => {
     const deleteCallback = () => {
         deleteAffairCallback(affair._id)
-    }; // need to fix
+    };
 
     return (
-        <>
+        <div>
             {affair.name}
             <button onClick={deleteCallback}>X</button>
-        </>
+        </div>
     );
 };
 

@@ -1,26 +1,33 @@
 import React, { FC } from 'react';
+
 import Affair from './Affair';
-import { AffairType } from './HW2';
+import {  AffairType, defaultAffairsType, FilterType } from './HW2';
 
 type AffairsPropsType = {
-    data: any;
-    setFilter: any;
-    deleteAffairCallback: any;
+    data: defaultAffairsType[];
+    setFilter: (filter: FilterType) => void;
+    deleteAffairCallback: (id : number) => void;
 };
 
-const Affairs: FC<AffairsPropsType> = ({data, setFilter, deleteAffairCallback}) =>  {
-    const mappedAffairs = data.map((obj: AffairType) => (
-        <Affair key={obj._id} affair={obj} deleteAffairCallback={deleteAffairCallback} />
-    ));
-
-    const setAll = () => {}; // need to fix
-    const setHigh = () => {};
-    const setMiddle = () => {};
-    const setLow = () => {};
+const Affairs: FC<AffairsPropsType> = ({ data, setFilter, deleteAffairCallback }) => {
+    const setAll = () => {
+        setFilter('all');
+    };
+    const setHigh = () => {
+        setFilter('high');
+    };
+    const setMiddle = () => {
+        setFilter('middle');
+    };
+    const setLow = () => {
+        setFilter('low');
+    };
 
     return (
         <div>
-            {mappedAffairs}
+            {data.map((obj: AffairType) => (
+                <Affair key={obj._id} affair={obj} deleteAffairCallback={deleteAffairCallback} />
+            ))}
 
             <button onClick={setAll}>All</button>
             <button onClick={setHigh}>High</button>
@@ -28,6 +35,6 @@ const Affairs: FC<AffairsPropsType> = ({data, setFilter, deleteAffairCallback}) 
             <button onClick={setLow}>Low</button>
         </div>
     );
-}
+};
 
 export default Affairs;

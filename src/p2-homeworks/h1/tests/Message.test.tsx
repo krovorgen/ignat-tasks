@@ -9,6 +9,7 @@ test('find text "test message name"', () => {
             name="test message name"
             message=""
             time=""
+            type="POST"
         />
     ))
     const linkElement = getByText(/test message name/i)
@@ -21,6 +22,7 @@ test('find text "test message"', () => {
             name=""
             message="test message"
             time=""
+            type="POST"
         />
     ))
     const linkElement = getByText(/test message/i)
@@ -33,6 +35,7 @@ test('find text "test message time"', () => {
             name=""
             message=""
             time="test message time"
+            type="POST"
         />
     ))
     const linkElement = getByText(/test message time/i)

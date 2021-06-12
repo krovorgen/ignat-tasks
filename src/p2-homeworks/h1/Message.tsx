@@ -7,7 +7,7 @@ interface IMessageProps {
     name: string;
     message: string;
     time: string;
-    type: 'GET' | 'POST';
+    type?: 'GET' | 'POST';
 }
 
 const Message: FC<IMessageProps> = ({ avatar, name, message, time, type }) => {

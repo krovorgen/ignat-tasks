@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
 import Affairs from './Affairs';
 
-export type AffairPriorityType = 'high' | 'low' | 'middle'; // need to fix any
-export type AffairType = any; // need to fix any
+export type AffairPriorityType = 'high' | 'low' | 'middle';
+export type AffairType = defaultAffairsType;
 export type FilterType = 'all' | AffairPriorityType;
 
 export interface defaultAffairsType {
     _id: number;
     name: string;
-    priority: string;
+    priority: FilterType;
 }
 
 const defaultAffairs: defaultAffairsType[] = [
-    // need to fix any
     { _id: 1, name: 'React', priority: 'high' },
     { _id: 2, name: 'anime', priority: 'low' },
     { _id: 3, name: 'games', priority: 'low' },
@@ -20,20 +19,19 @@ const defaultAffairs: defaultAffairsType[] = [
     { _id: 5, name: 'html & css', priority: 'middle' },
 ];
 
-// pure helper functions
-export const filterAffairs = (affairs: defaultAffairsType[], filter: any): any => {
-    // need to fix any
-    if (filter === 'all') return affairs;
-    if (filter === 'low') return affairs.filter((item) => item.priority === 'low');
-    if (filter === 'middle') return affairs.filter((item) => item.priority === 'middle');
-    if (filter === 'high') return affairs.filter((item) => item.priority === 'high');
+export const filterAffairs = (affairs: defaultAffairsType[], filter: FilterType): defaultAffairsType[] => {
+    if (filter === 'all') {
+        return affairs;
+    }
+    return affairs.filter(item => item.priority === filter);
 };
-export const deleteAffair = (affairs: defaultAffairsType[], _id: number): defaultAffairsType[] => {
+
+export const deleteAffair = (affairs: defaultAffairsType[], _id: number): AffairType[] => {
     return affairs.filter((item) => item._id !== _id);
 };
 
-function HW2() {
-    const [affairs, setAffairs] = useState<Array<defaultAffairsType>>(defaultAffairs); // need to fix any
+const HW2 = () => {
+    const [affairs, setAffairs] = useState<AffairType[]>(defaultAffairs);
     const [filter, setFilter] = useState<FilterType>('all');
 
     const filteredAffairs = filterAffairs(affairs, filter);
@@ -42,7 +40,7 @@ function HW2() {
     return (
         <div>
             <hr />
-            homeworks 2{/*should work (должно работать)*/}
+            <h2>homeworks 2</h2>
             <Affairs
                 data={filteredAffairs}
                 setFilter={setFilter}
