@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react';
+import React, { ChangeEvent, KeyboardEvent } from 'react';
 
 import styles from './style.module.scss';
 
@@ -8,6 +8,7 @@ type GreetingPropsType = {
     addUser: () => void;
     error: string | null;
     totalUsers: string | number;
+    onKeyHandler: (e: KeyboardEvent<HTMLInputElement>) => void;
 };
 
 const Greeting: React.FC<GreetingPropsType> = ({
@@ -16,6 +17,7 @@ const Greeting: React.FC<GreetingPropsType> = ({
     addUser,
     error,
     totalUsers,
+    onKeyHandler,
 }) => {
     return (
         <div>
@@ -25,8 +27,9 @@ const Greeting: React.FC<GreetingPropsType> = ({
                     <input
                         className={`${styles['form__input']} ${error ? styles['form__error'] : ''}`}
                         value={name}
+                        onKeyDown={onKeyHandler}
                         onChange={setNameCallback}
-                        placeholder={`${error ? 'error' : 'Enter text'}`}
+                        placeholder={`${error ? error : 'Enter text'}`}
                     />
                 </label>
                 <button className={styles['form__button']} onClick={addUser}>

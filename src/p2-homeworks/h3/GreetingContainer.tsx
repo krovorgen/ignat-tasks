@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FC, useState } from 'react';
+import React, { ChangeEvent, FC, useState, KeyboardEvent } from 'react';
 import Greeting from './Greeting';
 import { UserType } from './HW3';
 
@@ -18,15 +18,17 @@ const GreetingContainer: FC<GreetingContainerPropsType> = ({ users, addUserCallb
 
     const addUser = () => {
         if (name.trim() === '') {
-            return setError('ERROR');
+            setName('');
+            return setError('incorrect');
         }
         setError('');
-        console.log(`Hello  !`);
         addUserCallback(name);
         setName('');
     };
 
     const totalUsers = users.length;
+
+    const onKeyHandler = (e: KeyboardEvent<HTMLInputElement>) => e.key === 'Enter' && addUser();
 
     return (
         <Greeting
@@ -35,6 +37,7 @@ const GreetingContainer: FC<GreetingContainerPropsType> = ({ users, addUserCallb
             addUser={addUser}
             error={error}
             totalUsers={totalUsers}
+            onKeyHandler={onKeyHandler}
         />
     );
 };

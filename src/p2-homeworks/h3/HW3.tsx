@@ -21,12 +21,11 @@ function HW3() {
             <hr />
             <h2>homeworks 3</h2>
 
-            {/*should work (должно работать)*/}
             <GreetingContainer users={users} addUserCallback={addUserCallback} />
             <ul className={styles['users']}>
                 {users.map((item) => {
                     return (
-                        <li className={styles['users__item']}>
+                        <li key={item._id} className={styles['users__item']}>
                             <p className={styles['users__text']}>
                                 user: <span>{item.name}</span>
                             </p>
