@@ -1,28 +1,40 @@
-import React from 'react'
-import s from './Greeting.module.css'
+import React, { ChangeEvent } from 'react';
+
+import styles from './style.module.scss';
 
 type GreetingPropsType = {
-    name: any // need to fix any
-    setNameCallback: any // need to fix any
-    addUser: any // need to fix any
-    error: any // need to fix any
-    totalUsers: any // need to fix any
-}
+    name: string;
+    setNameCallback: (value: ChangeEvent<HTMLInputElement>) => void;
+    addUser: () => void;
+    error: string | null;
+    totalUsers: string | number;
+};
 
-// презентационная компонента (для верстальщика)
-const Greeting: React.FC<GreetingPropsType> = (
-    {name, setNameCallback, addUser, error, totalUsers} // деструктуризация пропсов
-) => {
-    const inputClass = s.error // need to fix with (?:)
-
+const Greeting: React.FC<GreetingPropsType> = ({
+    name,
+    setNameCallback,
+    addUser,
+    error,
+    totalUsers,
+}) => {
     return (
         <div>
-            <input value={name} onChange={setNameCallback} className={inputClass}/>
-            <span>{error}</span>
-            <button onClick={addUser}>add</button>
-            <span>{totalUsers}</span>
+            <span>Users count: {totalUsers}</span>
+            <div className={styles['form']}>
+                <label className={styles['form__label']}>
+                    <input
+                        className={`${styles['form__input']} ${error ? styles['form__error'] : ''}`}
+                        value={name}
+                        onChange={setNameCallback}
+                        placeholder={`${error ? 'error' : 'Enter text'}`}
+                    />
+                </label>
+                <button className={styles['form__button']} onClick={addUser}>
+                    +
+                </button>
+            </div>
         </div>
-    )
-}
+    );
+};
 
-export default Greeting
+export default Greeting;

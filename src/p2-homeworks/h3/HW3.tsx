@@ -1,34 +1,46 @@
-import React, {useState} from 'react'
-import GreetingContainer from './GreetingContainer'
+import React, { useState } from 'react';
+import GreetingContainer from './GreetingContainer';
+import { v1 } from 'uuid';
 
-// types
+import styles from './style.module.scss';
+
 export type UserType = {
-    _id: any // need to fix any
-    name: any // need to fix any
-}
+    _id: string;
+    name: string;
+};
 
-// уровень работы с глобальными данными
 function HW3() {
-    const [users, setUsers] = useState<any>([]) // need to fix any
+    const [users, setUsers] = useState<UserType[]>([]);
 
-    const addUserCallback = (name: any) => { // need to fix any
-        setUsers([]) // need to fix
-    }
-
+    const addUserCallback = (name: string) => {
+        setUsers([{ _id: v1(), name }, ...users]);
+    };
+    console.log(users);
     return (
         <div>
-            <hr/>
-            homeworks 3
+            <hr />
+            <h2>homeworks 3</h2>
 
             {/*should work (должно работать)*/}
-            <GreetingContainer users={users} addUserCallback={addUserCallback}/>
-
-            <hr/>
-            {/*для личного творчества, могу проверить*/}
-            {/*<AlternativeGreeting/>*/}
-            <hr/>
+            <GreetingContainer users={users} addUserCallback={addUserCallback} />
+            <ul className={styles['users']}>
+                {users.map((item) => {
+                    return (
+                        <li className={styles['users__item']}>
+                            <p className={styles['users__text']}>
+                                user: <span>{item.name}</span>
+                            </p>
+                            <p className={styles['users__text']}>
+                                id: <span>{item._id}</span>
+                            </p>
+                        </li>
+                    );
+                })}
+            </ul>
+            <hr />
+            <hr />
         </div>
-    )
+    );
 }
 
-export default HW3
+export default HW3;
