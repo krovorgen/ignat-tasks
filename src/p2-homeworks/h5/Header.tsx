@@ -10,17 +10,26 @@ function Header() {
       <nav className={styles['header__nav']}>
         <ul className={styles['header__items']}>
           <li className={styles['header__item']}>
-            <NavLink className={styles['header__link']} to={'/pre-junior'}>
+            <NavLink
+              activeClassName={styles['header__link--active']}
+              className={styles['header__link']}
+              to={'/pre-junior'}>
               pre junior
             </NavLink>
           </li>
           <li className={styles['header__item']}>
-            <NavLink className={styles['header__link']} to={'/junior'}>
+            <NavLink
+              activeClassName={styles['header__link--active']}
+              className={styles['header__link']}
+              to={'/junior'}>
               junior
             </NavLink>
           </li>
           <li className={styles['header__item']}>
-            <NavLink className={styles['header__link']} to={'/junior-plus'}>
+            <NavLink
+              activeClassName={styles['header__link--active']}
+              className={styles['header__link']}
+              to={'/junior-plus'}>
               junior plus
             </NavLink>
           </li>
