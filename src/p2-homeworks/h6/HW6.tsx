@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import SuperEditableSpan from './common/c4-SuperEditableSpan/SuperEditableSpan';
-import Button from '../h4/common/Button/Button';
 import { restoreState, saveState } from './localStorage/localStorage';
+import Button from '../h4/common/Button';
 
 function HW6() {
   const [value, setValue] = useState<string>('');

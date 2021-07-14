@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../h4/common/Button/Button';
+import Button from '../h4/common/Button';
 
 function HW10() {
   // useSelector, useDispatch

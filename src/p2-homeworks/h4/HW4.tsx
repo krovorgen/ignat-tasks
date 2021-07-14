@@ -1,8 +1,8 @@
 import React, { ChangeEvent, useState } from 'react';
-import SuperInputText from './common/c1-SuperInputText/SuperInputText';
 import s from './HW4.module.css';
-import Button from './common/Button/Button';
-import SuperCheckbox from './common/c3-SuperCheckbox/SuperCheckbox';
+import Input from './common/Input';
+import Button from './common/Button';
+import Checkbox from './common/Checkbox';
 
 function HW4() {
   const [text, setText] = useState<string>('');
@@ -23,33 +23,21 @@ function HW4() {
     <div className={'box'}>
       <h2>homeworks 4</h2>
       <div className={s.column}>
-        <SuperInputText value={text} onChangeText={setText} onEnter={showAlert} error={error} />
+        <Input value={text} onChangeText={setText} onEnter={showAlert} error={error} />
 
-        <SuperInputText className={s.blue} />
-
-        {/*----------------------------------------------------*/}
+        <Input className={s.blue} />
 
         <Button>default</Button>
-
         <Button red onClick={showAlert}>
           delete
         </Button>
-
         <Button disabled>disabled</Button>
 
-        {/*----------------------------------------------------*/}
-
-        <SuperCheckbox checked={checked} onChangeChecked={setChecked}>
+        <Checkbox checked={checked} onChangeChecked={setChecked}>
           some text
-        </SuperCheckbox>
-
-        {/*// onChange тоже должен работать*/}
-        <SuperCheckbox checked={checked} onChange={testOnChange} />
+        </Checkbox>
+        <Checkbox checked={checked} onChange={testOnChange} />
       </div>
-      {/*для личного творчества, могу проверить*/}
-      {/*<AlternativeSuperInputText/>*/}
-      {/*<AlternativeSuperButton/>*/}
-      {/*<AlternativeSuperCheckbox/>*/}
     </div>
   );
 }

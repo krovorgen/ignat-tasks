@@ -1,6 +1,9 @@
 import React, { FC } from 'react';
 import { defaultAffairsType } from './HW2';
-import Button from '../h4/common/Button/Button';
+import close from '../../images/close.svg';
+import Button from '../h4/common/Button';
+
+import styles from './style.module.scss';
 
 interface AffairPropsType {
   affair: defaultAffairsType;
@@ -13,10 +16,12 @@ const Affair: FC<AffairPropsType> = ({ affair, deleteAffairCallback }) => {
   };
 
   return (
-    <div>
-      {affair.name}
-      <Button onClick={deleteCallback}>X</Button>
-    </div>
+    <li className={styles['todolist__item']}>
+      <span style={{ fontSize: '25px' }}>{affair.name}</span>
+      <Button onClick={deleteCallback} addClass={styles['button__close']}>
+        <img src={close} alt="" />
+      </Button>
+    </li>
   );
 };
 

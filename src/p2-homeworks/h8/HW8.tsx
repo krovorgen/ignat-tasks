@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { homeWorkReducer } from './bll/homeWorkReducer';
-import Button from '../h4/common/Button/Button';
+import Button from '../h4/common/Button';
 
 // export type UserType =
 

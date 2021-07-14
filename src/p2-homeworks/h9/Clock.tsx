@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Button from '../h4/common/Button/Button';
+import Button from '../h4/common/Button';
 
 function Clock() {
   const [timerId, setTimerId] = useState<number>(0);

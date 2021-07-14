@@ -2,7 +2,8 @@ import React, { FC } from 'react';
 
 import Affair from './Affair';
 import { AffairType, defaultAffairsType, FilterType } from './HW2';
-import Button from '../h4/common/Button/Button';
+import Button from '../h4/common/Button';
+import styles from './style.module.scss';
 
 type AffairsPropsType = {
   data: defaultAffairsType[];
@@ -25,12 +26,14 @@ const Affairs: FC<AffairsPropsType> = ({ data, setFilter, deleteAffairCallback }
   };
 
   return (
-    <div>
-      {data.map((obj: AffairType) => (
-        <Affair key={obj._id} affair={obj} deleteAffairCallback={deleteAffairCallback} />
-      ))}
+    <div className={styles['todolist']}>
+      <ul className={styles['todolist__items']}>
+        {data.map((obj: AffairType) => (
+          <Affair key={obj._id} affair={obj} deleteAffairCallback={deleteAffairCallback} />
+        ))}
+      </ul>
 
-      <div>
+      <div className={styles['todolist__buttons']}>
         <Button onClick={setAll}>All</Button>
         <Button onClick={setHigh}>High</Button>
         <Button onClick={setMiddle}>Middle</Button>
