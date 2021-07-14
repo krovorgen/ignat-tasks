@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import SuperEditableSpan from './common/c4-SuperEditableSpan/SuperEditableSpan';
+import EditableSpan from './common/EditableSpan/EditableSpan';
 import { restoreState, saveState } from './localStorage/localStorage';
 import Button from '../h4/common/Button';
 
@@ -14,11 +14,10 @@ function HW6() {
   };
 
   return (
-    <div>
-      <hr />
-      homeworks 6{/*should work (должно работать)*/}
+    <div className={'box'}>
+      <h2>homeworks 6</h2>
       <div>
-        <SuperEditableSpan
+        <EditableSpan
           value={value}
           onChangeText={setValue}
           spanProps={{ children: value ? undefined : 'enter text...' }}
@@ -26,10 +25,6 @@ function HW6() {
       </div>
       <Button onClick={save}>save</Button>
       <Button onClick={restore}>restore</Button>
-      <hr />
-      {/*для личного творчества, могу проверить*/}
-      {/*<AlternativeSuperEditableSpan/>*/}
-      <hr />
     </div>
   );
 }

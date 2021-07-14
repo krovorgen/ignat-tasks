@@ -1,5 +1,5 @@
-import React, { DetailedHTMLProps, InputHTMLAttributes, HTMLAttributes, useState } from 'react';
-import Index from '../../../h4/common/Input';
+import React, { DetailedHTMLProps, HTMLAttributes, InputHTMLAttributes, useState } from 'react';
+import Input from '../../../h4/common/Input';
 
 // тип пропсов обычного инпута
 type DefaultInputPropsType = DetailedHTMLProps<
@@ -21,7 +21,7 @@ type SuperEditableSpanType = DefaultInputPropsType & {
   spanProps?: DefaultSpanPropsType; // пропсы для спана
 };
 
-const SuperEditableSpan: React.FC<SuperEditableSpanType> = ({
+const EditableSpan: React.FC<SuperEditableSpanType> = ({
   autoFocus, // игнорировать изменение этого пропса
   onBlur,
   onEnter,
@@ -53,7 +53,7 @@ const SuperEditableSpan: React.FC<SuperEditableSpanType> = ({
   return (
     <>
       {editMode ? (
-        <Index
+        <Input
           autoFocus // пропсу с булевым значением не обязательно указывать true
           onBlur={onBlurCallback}
           onEnter={onEnterCallback}
@@ -69,4 +69,4 @@ const SuperEditableSpan: React.FC<SuperEditableSpanType> = ({
   );
 };
 
-export default SuperEditableSpan;
+export default EditableSpan;
