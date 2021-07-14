@@ -1,4 +1,4 @@
-import {loadingReducer} from './loadingReducer'
+import { loadingReducer } from './loadingReducer';
 
 // const reducers = combineReducers({
 //     loading: loadingReducer,

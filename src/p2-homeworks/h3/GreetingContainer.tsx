@@ -3,43 +3,43 @@ import Greeting from './Greeting';
 import { UserType } from './HW3';
 
 type GreetingContainerPropsType = {
-    users: UserType[];
-    addUserCallback: (value: string) => void;
+  users: UserType[];
+  addUserCallback: (value: string) => void;
 };
 
 const GreetingContainer: FC<GreetingContainerPropsType> = ({ users, addUserCallback }) => {
-    const [name, setName] = useState<string>('');
-    const [error, setError] = useState<string>('');
+  const [name, setName] = useState<string>('');
+  const [error, setError] = useState<string>('');
 
-    const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => {
-        setError('');
-        setName(e.currentTarget.value);
-    };
+  const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => {
+    setError('');
+    setName(e.currentTarget.value);
+  };
 
-    const addUser = () => {
-        if (name.trim() === '') {
-            setName('');
-            return setError('incorrect');
-        }
-        setError('');
-        addUserCallback(name);
-        setName('');
-    };
+  const addUser = () => {
+    if (name.trim() === '') {
+      setName('');
+      return setError('incorrect');
+    }
+    setError('');
+    addUserCallback(name);
+    setName('');
+  };
 
-    const totalUsers = users.length;
+  const totalUsers = users.length;
 
-    const onKeyHandler = (e: KeyboardEvent<HTMLInputElement>) => e.key === 'Enter' && addUser();
+  const onKeyHandler = (e: KeyboardEvent<HTMLInputElement>) => e.key === 'Enter' && addUser();
 
-    return (
-        <Greeting
-            name={name}
-            setNameCallback={setNameCallback}
-            addUser={addUser}
-            error={error}
-            totalUsers={totalUsers}
-            onKeyHandler={onKeyHandler}
-        />
-    );
+  return (
+    <Greeting
+      name={name}
+      setNameCallback={setNameCallback}
+      addUser={addUser}
+      error={error}
+      totalUsers={totalUsers}
+      onKeyHandler={onKeyHandler}
+    />
+  );
 };
 
 export default GreetingContainer;

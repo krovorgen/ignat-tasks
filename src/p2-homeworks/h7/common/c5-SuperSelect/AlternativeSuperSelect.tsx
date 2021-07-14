@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 function AlternativeSuperSelect() {
-    return (
-        <input/>
-    )
+  return <input />;
 }
 
-export default AlternativeSuperSelect
+export default AlternativeSuperSelect;
