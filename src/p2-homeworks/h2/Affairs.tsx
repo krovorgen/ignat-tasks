@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 
 import Affair from './Affair';
 import { AffairType, defaultAffairsType, FilterType } from './HW2';
+import Button from '../h4/common/Button/Button';
 
 type AffairsPropsType = {
   data: defaultAffairsType[];
@@ -29,10 +30,12 @@ const Affairs: FC<AffairsPropsType> = ({ data, setFilter, deleteAffairCallback }
         <Affair key={obj._id} affair={obj} deleteAffairCallback={deleteAffairCallback} />
       ))}
 
-      <button onClick={setAll}>All</button>
-      <button onClick={setHigh}>High</button>
-      <button onClick={setMiddle}>Middle</button>
-      <button onClick={setLow}>Low</button>
+      <div>
+        <Button onClick={setAll}>All</Button>
+        <Button onClick={setHigh}>High</Button>
+        <Button onClick={setMiddle}>Middle</Button>
+        <Button onClick={setLow}>Low</Button>
+      </div>
     </div>
   );
 };

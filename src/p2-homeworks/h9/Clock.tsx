@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import SuperButton from '../h4/common/c2-SuperButton/SuperButton';
+import Button from '../h4/common/Button/Button';
 
 function Clock() {
   const [timerId, setTimerId] = useState<number>(0);
@@ -35,8 +35,8 @@ function Clock() {
 
       {show && <div>{stringDate}</div>}
 
-      <SuperButton onClick={start}>start</SuperButton>
-      <SuperButton onClick={stop}>stop</SuperButton>
+      <Button onClick={start}>start</Button>
+      <Button onClick={stop}>stop</Button>
     </div>
   );
 }

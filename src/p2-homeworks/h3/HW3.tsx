@@ -15,10 +15,8 @@ function HW3() {
   const addUserCallback = (name: string) => {
     setUsers([{ _id: v1(), name }, ...users]);
   };
-  console.log(users);
   return (
-    <div>
-      <hr />
+    <div className={'box'}>
       <h2>homeworks 3</h2>
 
       <GreetingContainer users={users} addUserCallback={addUserCallback} />
@@ -36,8 +34,6 @@ function HW3() {
           );
         })}
       </ul>
-      <hr />
-      <hr />
     </div>
   );
 }

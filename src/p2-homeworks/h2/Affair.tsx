@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { defaultAffairsType } from './HW2';
+import Button from '../h4/common/Button/Button';
 
 interface AffairPropsType {
   affair: defaultAffairsType;
@@ -14,7 +15,7 @@ const Affair: FC<AffairPropsType> = ({ affair, deleteAffairCallback }) => {
   return (
     <div>
       {affair.name}
-      <button onClick={deleteCallback}>X</button>
+      <Button onClick={deleteCallback}>X</Button>
     </div>
   );
 };

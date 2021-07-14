@@ -10,9 +10,7 @@ const messageData = {
 
 function HW1() {
   return (
-    <div>
-      <hr />
-
+    <div className={'box'}>
       <Message
         avatar={messageData.avatar}
         name={messageData.name}
@@ -20,9 +18,7 @@ function HW1() {
         time={messageData.time}
         type="POST"
       />
-
-      <hr />
-      {/*для личного творчества, могу проверить*/}
+      <br />
       <Message
         avatar={messageData.avatar}
         name={messageData.name}
@@ -30,7 +26,6 @@ function HW1() {
         time={messageData.time}
         type="GET"
       />
-      <hr />
     </div>
   );
 }
