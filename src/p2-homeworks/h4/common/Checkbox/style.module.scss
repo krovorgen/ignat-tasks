@@ -3,14 +3,8 @@
 .checkbox {
     cursor: pointer;
 
-    &__input {
-        @include visually-hidden;
-
-        &:checked + .checkbox__text {
-            &::after {
-                opacity: 1;
-            }
-        }
+    &__input:checked + .checkbox__text::after {
+        opacity: 1;
     }
 
     &__text {

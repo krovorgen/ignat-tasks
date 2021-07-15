@@ -30,7 +30,7 @@ const Checkbox: React.FC<SuperCheckboxPropsType> = ({
   return (
     <label className={styles['checkbox']}>
       <input
-        className={styles['checkbox__input']}
+        className={`${styles['checkbox__input']} visually-hidden`}
         type={'checkbox'}
         onChange={onChangeCallback}
         {...restProps}
