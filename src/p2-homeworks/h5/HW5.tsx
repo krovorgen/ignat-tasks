@@ -8,7 +8,6 @@ function HW5() {
     <div>
       <HashRouter>
         <Header />
-
         <Routes />
       </HashRouter>
     </div>
