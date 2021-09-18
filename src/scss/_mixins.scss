@@ -1,7 +1,8 @@
-$green-700: #04202c;
-$green-600: #304040;
-$green-500: #5b7065;
-$green-100: #c9d1c8;
+@mixin media($width) {
+  @media only screen and (max-width: $width) {
+    @content;
+  }
+}
 
 @mixin visually-hidden() {
   position: absolute;

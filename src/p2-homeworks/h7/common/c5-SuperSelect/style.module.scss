@@ -1,9 +1,17 @@
+@import "src/scss/var";
+@import "src/scss/mixins";
+
 .select {
-    padding: 8px;
-    width: 100%;
-    max-width: 300px;
-    border: 1px solid #f00;
-    font-size: 20px;
-    color: #2b5876;
-    background-color: #fff;
+  padding: 8px;
+  width: 100%;
+  max-width: 300px;
+  appearance: none;
+  border: 1px solid #f00;
+  font-size: 20px;
+  color: #2b5876;
+  background-image: url("data:image/svg+xml,%3Csvg height='128' style='enable-background:new 0 0 128 128' width='128' xml:space='preserve' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath style='fill:none;stroke:%232f3435;stroke-width:12;stroke-linecap:square;stroke-miterlimit:10' d='M111 40.5 64 87.499M64 87.499 17 40.5'/%3E%3C/svg%3E");
+  background-position: center right 8px;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-color: #fff;
 }

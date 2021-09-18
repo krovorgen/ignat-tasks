@@ -1,25 +1,25 @@
 .button {
-    &__close {
-        padding: 5px;
-        width: 25px;
-        height: 25px;
-    }
+  &__close {
+    padding: 5px;
+    width: 25px;
+    height: 25px;
+  }
 }
 
 .todolist {
-    max-width: 260px;
+  max-width: 260px;
 
-    &__item {
-        display: flex;
-        justify-content: space-between;
+  &__item {
+    display: flex;
+    justify-content: space-between;
 
-        &:not(:last-child) {
-            margin-bottom: 5px;
-        }
+    &:not(:last-child) {
+      margin-bottom: 5px;
     }
+  }
 
-    &__buttons {
-        display: flex;
-        justify-content: space-between;
-    }
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+  }
 }
