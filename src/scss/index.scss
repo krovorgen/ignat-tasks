@@ -1,0 +1,8 @@
+@import "var";
+@import "mixins";
+@import "global";
+
+.box {
+  padding: 40px 0;
+  border-bottom: 1px solid #000;
+}

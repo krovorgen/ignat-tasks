@@ -1,0 +1,15 @@
+@import "src/scss/var";
+@import "src/scss/mixins";
+
+.users {
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+
+    span {
+      font-weight: 700;
+      color: #2d2d2d;
+    }
+  }
+}
