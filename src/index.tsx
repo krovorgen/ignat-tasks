@@ -7,7 +7,8 @@ import './scss/index.scss';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    {/*<App />*/}
+    <>hello world</>
   </React.StrictMode>,
   document.getElementById('root'),
 );
