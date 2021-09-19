@@ -1,7 +1,9 @@
 import React from 'react';
-import { homeWorkReducer } from '../homeWorkReducer';
 
-let initialState: any[]; // need to fix any
+import { homeWorkReducer } from '../homeWorkReducer';
+import { UserType } from '../../HW8';
+
+let initialState: UserType[];
 
 beforeEach(() => {
   initialState = [
@@ -15,14 +17,32 @@ beforeEach(() => {
 });
 
 test('sort name up', () => {
-  const newState = homeWorkReducer(initialState, { type: 'sort', payload: 'up' });
+  const newState: UserType[] = homeWorkReducer(initialState, { type: 'sort', payload: 'up' });
 
-  console.log(newState);
-  // expect(...).toBe(...)
+  const result = [1, 5, 3, 4, 2, 0].filter((item, index) => item === newState[index]._id);
+  expect(result.length).toBe(newState.length);
+
+  expect(newState[0].age).toBe(66);
+  expect(newState.length).toBe(6);
+  expect(newState[newState.length - 1].age).toBe(3);
 });
+
 test('sort name down', () => {
-  const newState = homeWorkReducer(initialState, { type: 'sort', payload: 'down' });
+  const newState: UserType[] = homeWorkReducer(initialState, { type: 'sort', payload: 'down' });
+
+  const result = [0, 2, 4, 3, 5, 1].filter((item, index) => item === newState[index]._id);
+  expect(result.length).toBe(newState.length);
+
+  expect(newState[0].age).toBe(3);
+  expect(newState.length).toBe(6);
+  expect(newState[newState.length - 1].age).toBe(66);
 });
+
 test('check age 18', () => {
-  const newState = homeWorkReducer(initialState, { type: 'check', payload: 18 });
+  const newState: UserType[] = homeWorkReducer(initialState, {
+    type: 'sort',
+    payload: 'majority',
+  });
+
+  expect(newState.length).toBe(4);
 });

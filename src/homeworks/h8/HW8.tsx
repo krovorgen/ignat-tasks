@@ -20,10 +20,21 @@ const initialPeople: UserType[] = [
   { _id: 5, name: 'Ирина', age: 55 },
 ];
 
+export type SortPeoplePayload = 'up' | 'down' | 'majority';
+
+export type SortPeopleActionType = { type: 'sort'; payload: SortPeoplePayload };
+
 export const HW8 = () => {
   const [people, setPeople] = useState<UserType[]>(initialPeople);
 
-  const sortUp = () => setPeople(homeWorkReducer(initialPeople, { type: 'sort', payload: 'up' }));
+  const SortPeopleAC = (payload: SortPeoplePayload): SortPeopleActionType => ({
+    type: 'sort',
+    payload,
+  });
+
+  const sortUp = () => setPeople(homeWorkReducer(initialPeople, SortPeopleAC('up')));
+  const sortDown = () => setPeople(homeWorkReducer(initialPeople, SortPeopleAC('down')));
+  const sortMajority = () => setPeople(homeWorkReducer(initialPeople, SortPeopleAC('majority')));
 
   return (
     <div className={'box'}>
@@ -42,10 +53,10 @@ export const HW8 = () => {
             <Button onClick={sortUp}>sort up</Button>
           </li>
           <li className={styles['people-sort__navigation']}>
-            <Button onClick={sortUp}>sort down</Button>
+            <Button onClick={sortDown}>sort down</Button>
           </li>
           <li className={styles['people-sort__navigation']}>
-            <Button onClick={sortUp}>check 18</Button>
+            <Button onClick={sortMajority}>check 18</Button>
           </li>
         </ul>
       </div>

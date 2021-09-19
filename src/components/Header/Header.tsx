@@ -10,7 +10,7 @@ export const Header = () => {
 
   for (let key in PATH) {
     menuItems.push(
-      <li className={styles['header__item']}>
+      <li className={styles['header__item']} key={PATH + key}>
         <NavLink
           activeClassName={styles['header__link--active']}
           className={styles['header__link']}
