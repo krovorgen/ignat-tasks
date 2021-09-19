@@ -1,0 +1,30 @@
+@import "src/scss/var";
+@import "src/scss/mixins";
+
+.people-sort {
+  width: fit-content;
+
+  &__peoples {
+    margin-bottom: 32px;
+  }
+
+  &__people {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__navigations {
+    display: flex;
+  }
+
+  &__navigation {
+    &:not(:last-child) {
+      margin-right: 16px;
+    }
+  }
+}

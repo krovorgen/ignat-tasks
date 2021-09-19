@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
-import { homeWorkReducer } from './bll/homeWorkReducer';
 
+import { homeWorkReducer } from './bll/homeWorkReducer';
 import { Button } from '../../components/Button';
 
-// export type UserType =
+import styles from './style.module.scss';
 
-const initialPeople = [
+export type UserType = {
+  _id: number;
+  name: string;
+  age: number;
+};
+
+const initialPeople: UserType[] = [
   { _id: 0, name: 'Кот', age: 3 },
   { _id: 1, name: 'Александр', age: 66 },
   { _id: 2, name: 'Коля', age: 16 },
@@ -14,30 +20,35 @@ const initialPeople = [
   { _id: 5, name: 'Ирина', age: 55 },
 ];
 
-function HW8() {
-  const [people, setPeople] = useState<any>(initialPeople); // need to fix any
-
-  // need to fix any
-  const finalPeople = people.map((p: any) => <div key={p._id}>some name, age</div>);
+export const HW8 = () => {
+  const [people, setPeople] = useState<UserType[]>(initialPeople);
 
   const sortUp = () => setPeople(homeWorkReducer(initialPeople, { type: 'sort', payload: 'up' }));
 
   return (
-    <div>
-      <hr />
-      homeworks 8{/*should work (должно работать)*/}
-      {finalPeople}
-      <div>
-        <Button onClick={sortUp}>sort up</Button>
+    <div className={'box'}>
+      <h2>homeworks 8</h2>
+      <div className={styles['people-sort']}>
+        <ul className={styles['people-sort__peoples']}>
+          {people.map((p: UserType) => (
+            <li className={styles['people-sort__people']} key={p._id}>
+              <span>{p.name}</span>
+              <span>{p.age}</span>
+            </li>
+          ))}
+        </ul>
+        <ul className={styles['people-sort__navigations']}>
+          <li className={styles['people-sort__navigation']}>
+            <Button onClick={sortUp}>sort up</Button>
+          </li>
+          <li className={styles['people-sort__navigation']}>
+            <Button onClick={sortUp}>sort down</Button>
+          </li>
+          <li className={styles['people-sort__navigation']}>
+            <Button onClick={sortUp}>check 18</Button>
+          </li>
+        </ul>
       </div>
-      <div>sort down</div>
-      check 18
-      <hr />
-      {/*для личного творчества, могу проверить*/}
-      {/*<AlternativePeople/>*/}
-      <hr />
     </div>
   );
-}
-
-export default HW8;
+};

@@ -1,3 +1,6 @@
+@import "src/scss/var";
+@import "src/scss/mixins";
+
 .editable-span {
   &__span {
     position: relative;
