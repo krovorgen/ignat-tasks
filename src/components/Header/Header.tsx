@@ -15,7 +15,7 @@ export const Header = () => {
           activeClassName={styles['header__link--active']}
           className={styles['header__link']}
           to={PATH[key]}>
-          pre junior
+          {PATH[key]}
         </NavLink>
       </li>,
     );
