@@ -1,18 +1,11 @@
 import React from 'react';
-import Clock from './Clock';
+import { Clock } from '../../components/Clock';
 
-function HW9() {
+export const HW9 = () => {
   return (
-    <div>
-      <hr />
-      homeworks 9{/*should work (должно работать)*/}
+    <div className={'box'}>
+      <h2>homeworks 9</h2>
       <Clock />
-      <hr />
-      {/*для личного творчества, могу проверить*/}
-      {/*<AlternativeClock/>*/}
-      <hr />
     </div>
   );
-}
-
-export default HW9;
+};

@@ -1,0 +1,17 @@
+@import "src/scss/var";
+@import "src/scss/mixins";
+
+.clock {
+  &__text {
+    min-height: 25px;
+    font-size: 20px;
+
+    &--time {
+      color: #fff;
+    }
+
+    &--date {
+      color: #f00;
+    }
+  }
+}
