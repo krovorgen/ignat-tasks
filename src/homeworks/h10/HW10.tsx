@@ -1,35 +1,32 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { Button } from '../../components/Button';
+import { AppStoreType } from './bll/store';
+import { loadingAC } from './bll/loadingReducer';
+import loader from './loader.svg';
 
-function HW10() {
-  // useSelector, useDispatch
-  const loading = false;
+import styles from './style.module.scss';
+
+export const HW10 = () => {
+  const dispatch = useDispatch();
+  const { loading } = useSelector((state: AppStoreType) => state.loading);
 
   const setLoading = () => {
-    // dispatch
-    // setTimeout
-    console.log('loading...');
+    setTimeout(() => {
+      dispatch(loadingAC());
+    }, 1000);
+    dispatch(loadingAC());
   };
 
   return (
-    <div>
-      <hr />
-      homeworks 10
-      {/*should work (должно работать)*/}
+    <div className={`box ${styles['loading-page']}`}>
+      <h2>homeworks 10</h2>
       {loading ? (
-        <div>крутилка...</div>
+        <img className={styles['loading-page__loader']} src={loader} alt="Loader" />
       ) : (
-        <div>
-          <Button onClick={setLoading}>set loading...</Button>
-        </div>
+        <Button onClick={setLoading}>set loading...</Button>
       )}
-      <hr />
-      {/*для личного творчества, могу проверить*/}
-      {/*<Alternative/>*/}
-      <hr />
     </div>
   );
-}
-
-export default HW10;
+};
