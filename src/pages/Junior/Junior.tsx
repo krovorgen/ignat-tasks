@@ -5,6 +5,7 @@ import { HW8 } from '../../homeworks/h8';
 import { HW9 } from '../../homeworks/h9';
 import { HW10 } from '../../homeworks/h10';
 import { HW11 } from '../../homeworks/h11';
+import { HW12 } from '../../homeworks/h12';
 
 export const Junior = () => (
   <>
@@ -13,5 +14,6 @@ export const Junior = () => (
     <HW9 />
     <HW10 />
     <HW11 />
+    <HW12 />
   </>
 );

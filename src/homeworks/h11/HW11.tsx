@@ -33,7 +33,7 @@ export const HW11 = () => {
       <h2>homeworks 11</h2>
       <div>
         <span>{value1}</span>
-        <SuperRange onChangeRange={setValue1} />
+        <SuperRange onChangeRange={setValue1} value={value1} />
         <Slider value={+value1} onChange={handleChange} />
         <SliderInput
           value={value2 !== '' ? +value2 * 100 : ''}
