@@ -1,5 +1,8 @@
 lockfileVersion: 5.3
 
+overrides:
+  mini-css-extract-plugin: 2.4.5
+
 specifiers:
   '@alfalab/core-components': ^23.9.1
   '@lottiefiles/react-lottie-player': 3.4.1
@@ -17,6 +20,7 @@ specifiers:
   gh-pages: ^3.2.3
   moment: ^2.29.1
   node-sass: ^6.0.0
+  postcss-normalize: 10.0.1
   prettier: 2.3.0
   react: ^17.0.2
   react-dom: ^17.0.2
@@ -58,6 +62,7 @@ dependencies:
 devDependencies:
   classnames: 2.3.1
   gh-pages: 3.2.3
+  postcss-normalize: 10.0.1
   prettier: 2.3.0
   react-redux: 7.2.6_react-dom@17.0.2+react@17.0.2
   redux: 4.1.2
@@ -1520,7 +1525,6 @@ packages:
 
   /@csstools/normalize.css/12.0.0:
     resolution: {integrity: sha512-M0qqxAcwCsIVfpFQSlGN5XjXWu8l5JDZN+fPt1LeW5SZexQTgnaEvgXAY+CeygRw0EeppWHi12JxESWiWrB0Sg==}
-    dev: false
 
   /@eslint/eslintrc/1.0.5:
     resolution: {integrity: sha512-BLxsnmK3KyPunz5wmCCpqy0YelEoxxGmH73Is+Z74oOTMtExcjkr3dDR6quwrjh1YspA8DH9gnX1o069KiS9AQ==}
@@ -7258,8 +7262,8 @@ packages:
       tiny-warning: 1.0.3
     dev: false
 
-  /mini-css-extract-plugin/2.5.3_webpack@5.67.0:
-    resolution: {integrity: sha512-YseMB8cs8U/KCaAGQoqYmfUuhhGW0a9p9XvWXrxVOkE3/IiISTLw4ALNt7JR5B2eYauFM+PQGSbXMDmVbR7Tfw==}
+  /mini-css-extract-plugin/2.4.5_webpack@5.67.0:
+    resolution: {integrity: sha512-oEIhRucyn1JbT/1tU2BhnwO6ft1jjH1iCX9Gc59WFMg0n5773rQU0oyQ0zzeYFFuBfONaRbQJyGoPtuNseMxjA==}
     engines: {node: '>= 12.13.0'}
     peerDependencies:
       webpack: ^5.0.0
@@ -7883,6 +7887,14 @@ packages:
       postcss-selector-parser: 6.0.9
     dev: false
 
+  /postcss-browser-comments/4.0.0:
+    resolution: {integrity: sha512-X9X9/WN3KIvY9+hNERUqX9gncsgBA25XaeR+jshHz2j8+sYyHktHw1JdKuMjeLpGktXidqDhA7b/qm1mrBDmgg==}
+    engines: {node: '>=8'}
+    peerDependencies:
+      browserslist: '>=4'
+      postcss: '>=8'
+    dev: true
+
   /postcss-browser-comments/4.0.0_328fa76e2e12da084b12cca0dce079e9:
     resolution: {integrity: sha512-X9X9/WN3KIvY9+hNERUqX9gncsgBA25XaeR+jshHz2j8+sYyHktHw1JdKuMjeLpGktXidqDhA7b/qm1mrBDmgg==}
     engines: {node: '>=8'}
@@ -8421,6 +8433,18 @@ packages:
       postcss: 8.4.5
       postcss-value-parser: 4.2.0
     dev: false
+
+  /postcss-normalize/10.0.1:
+    resolution: {integrity: sha512-+5w18/rDev5mqERcG3W5GZNMJa1eoYYNGo8gB7tEwaos0ajk3ZXAI4mHGcNT47NE+ZnZD1pEpUOFLvltIwmeJA==}
+    engines: {node: '>= 12'}
+    peerDependencies:
+      browserslist: '>= 4'
+      postcss: '>= 8'
+    dependencies:
+      '@csstools/normalize.css': 12.0.0
+      postcss-browser-comments: 4.0.0
+      sanitize.css: 13.0.0
+    dev: true
 
   /postcss-normalize/10.0.1_328fa76e2e12da084b12cca0dce079e9:
     resolution: {integrity: sha512-+5w18/rDev5mqERcG3W5GZNMJa1eoYYNGo8gB7tEwaos0ajk3ZXAI4mHGcNT47NE+ZnZD1pEpUOFLvltIwmeJA==}
@@ -9034,7 +9058,7 @@ packages:
       jest: 27.4.7
       jest-resolve: 27.4.6
       jest-watch-typeahead: 1.0.0_jest@27.4.7
-      mini-css-extract-plugin: 2.5.3_webpack@5.67.0
+      mini-css-extract-plugin: 2.4.5_webpack@5.67.0
       postcss: 8.4.5
       postcss-flexbugs-fixes: 5.0.2_postcss@8.4.5
       postcss-loader: 6.2.1_postcss@8.4.5+webpack@5.67.0
@@ -9547,7 +9571,6 @@ packages:
 
   /sanitize.css/13.0.0:
     resolution: {integrity: sha512-ZRwKbh/eQ6w9vmTjkuG0Ioi3HBwPFce0O+v//ve+aOq1oeCy7jMV2qzzAlpsNuqpqCBjjriM1lbtZbF/Q8jVyA==}
-    dev: false
 
   /sass-graph/2.2.5:
     resolution: {integrity: sha512-VFWDAHOe6mRuT4mZRd4eKE+d8Uedrk6Xnh7Sh9b4NGufQLQjOrvf/MQoOdx+0s92L89FeyUUNfU597j/3uNpag==}
