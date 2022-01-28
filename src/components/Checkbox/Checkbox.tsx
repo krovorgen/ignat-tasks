@@ -35,7 +35,9 @@ export const Checkbox: React.FC<SuperCheckboxPropsType> = ({
         onChange={onChangeCallback}
         {...restProps}
       />
-      {children && <span className={styles['checkbox__text']}>{children}</span>}
+      {(children || restProps.value) && (
+        <span className={styles['checkbox__text']}>{children || restProps.value}</span>
+      )}
     </label>
   );
 };
