@@ -42,7 +42,7 @@ export const HW2 = () => {
   const deleteAffairCallback = (_id: number) => setAffairs(deleteAffair(affairs, _id));
 
   return (
-    <div className={'box'}>
+    <div className="box">
       <h2>homeworks 2</h2>
       <Affairs
         data={filteredAffairs}

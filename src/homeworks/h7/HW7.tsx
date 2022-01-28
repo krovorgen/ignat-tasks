@@ -9,7 +9,7 @@ export const HW7 = () => {
   const [value, onChangeOption] = useState(arr[1]);
 
   return (
-    <div className={'box'}>
+    <div className="box">
       <h2>homeworks 7</h2>
       <Select options={arr} value={value} onChangeOption={onChangeOption} />
       <Radio name={'radio'} options={arr} value={value} onChangeOption={onChangeOption} />

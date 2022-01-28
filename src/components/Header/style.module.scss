@@ -10,6 +10,12 @@
   color: $green-100;
   background-color: $green-700;
 
+  &:hover {
+    .header__nav {
+      transform: translateY(0);
+    }
+  }
+
   &__nav {
     position: absolute;
     left: 0;
@@ -45,12 +51,6 @@
 
     &--active {
       background-color: $green-700;
-    }
-  }
-
-  &:hover {
-    .header__nav {
-      transform: translateY(0);
     }
   }
 }

@@ -15,7 +15,7 @@ export const HW6 = () => {
   };
 
   return (
-    <div className={'box'}>
+    <div className="box">
       <h2>homeworks 6</h2>
       <EditableSpan
         value={value}

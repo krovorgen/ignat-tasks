@@ -20,7 +20,7 @@ export const HW4 = () => {
   const testOnChange = (e: ChangeEvent<HTMLInputElement>) => setChecked(e.currentTarget.checked);
 
   return (
-    <div className={'box'}>
+    <div className="box">
       <h2>homeworks 4</h2>
       <Input value={text} onChangeText={setText} onEnter={showAlert} error={error} />
       <Input />

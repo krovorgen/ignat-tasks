@@ -37,7 +37,7 @@ export const HW8 = () => {
   const sortMajority = () => setPeople(homeWorkReducer(initialPeople, SortPeopleAC('majority')));
 
   return (
-    <div className={'box'}>
+    <div className="box">
       <h2>homeworks 8</h2>
       <div className={styles['people-sort']}>
         <ul className={styles['people-sort__peoples']}>

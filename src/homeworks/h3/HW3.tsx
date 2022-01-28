@@ -18,7 +18,7 @@ export const HW3 = () => {
   };
 
   return (
-    <div className={'box'}>
+    <div className="box">
       <h2>homeworks 3</h2>
 
       <Greeting users={users} addUserCallback={addUserCallback} />

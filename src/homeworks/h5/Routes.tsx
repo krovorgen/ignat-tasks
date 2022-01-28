@@ -6,11 +6,11 @@ import { Junior } from '../../pages/Junior';
 import { JuniorPlus } from '../../pages/JuniorPlus';
 import { Error404 } from '../../pages/Error404';
 
-export const PATH: { [value: string]: string } = {
-  PRE_JUNIOR: '/pre-junior',
-  JUNIOR: '/junior',
-  JUNIOR_PLUS: '/junior-plus',
-};
+export enum PATH {
+  PRE_JUNIOR = '/pre-junior',
+  JUNIOR = '/junior',
+  JUNIOR_PLUS = '/junior-plus',
+}
 
 export const Routes = () => {
   return (

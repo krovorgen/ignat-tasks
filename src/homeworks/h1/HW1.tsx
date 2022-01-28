@@ -11,7 +11,7 @@ const messageData = {
 
 export const HW1 = () => {
   return (
-    <div className={'box'}>
+    <div className="box">
       <Message
         avatar={messageData.avatar}
         name={messageData.name}
