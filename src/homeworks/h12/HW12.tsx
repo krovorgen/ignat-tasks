@@ -3,10 +3,10 @@ import cn from 'classnames';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { AppStoreType } from '../h10/bll/store';
-
-import s from './HW12.module.scss';
 import { Select } from '../../components/Select';
 import { changeThemeAC } from './bll/themeReducer';
+
+import s from './HW12.module.scss';
 
 const themes = ['dark', 'red', 'some'];
 
@@ -17,7 +17,7 @@ export const HW12 = () => {
     (currentTheme) => {
       dispatch(changeThemeAC(currentTheme));
     },
-    [dispatch, theme],
+    [dispatch],
   );
 
   return (
